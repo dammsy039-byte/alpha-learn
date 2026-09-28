@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Alpha Learn - Online student learning platform">
+<title>Alpha Learn</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">Alpha Learn</div>
+  <nav>
+    <button onclick="show('home')">Home</button>
+    <button onclick="show('subjects')">Subjects</button>
+    <button onclick="show('premium')">Premium</button>
+    <button onclick="show('account')">Account</button>
+  </nav>
+</header>
+
+<main>
+<section id="home" class="page active">
+  <div class="hero">
+    <div>
+      <p class="eyebrow">ONLINE LEARNING PLATFORM</p>
+      <h1>Learn smarter with <span>Alpha Learn.</span></h1>
+      <p>Study lessons, practise quizzes and keep track of your progress from any device.</p>
+      <button class="primary" onclick="show('subjects')">Start Learning</button>
+    </div>
+    <div class="hero-card">
+      <div>📚 Lessons</div><div>📝 Quizzes</div><div>📊 Progress</div><div>⭐ Premium</div>
+    </div>
+  </div>
+</section>
+
+<section id="subjects" class="page">
+  <div class="section-head"><div><p class="eyebrow">LEARN</p><h2>Subjects</h2></div>
+  <input id="search" placeholder="Search subjects..." oninput="renderSubjects()"></div>
+  <div id="subjectsGrid" class="grid"></div>
+</section>
+
+<section id="quiz" class="page">
+  <button class="secondary" onclick="show('subjects')">← Subjects</button>
+  <h2 id="quizTitle"></h2>
+  <div id="quizBox"></div>
+</section>
+
+<section id="premium" class="page">
+  <div class="premium">
+    <p class="eyebrow">ALPHA LEARN PLUS</p>
+    <h2>Unlock Premium learning</h2>
+    <p>Get access to premium subjects and additional practice features.</p>
+    <div class="price">Premium</div>
+    <ul><li>Premium subjects</li><li>Extra quizzes</li><li>Progress tracking</li><li>Future premium resources</li></ul>
+    <p id="planStatus"></p>
+    <button id="premiumBtn" class="primary" onclick="activateDemo()">Activate Demo Premium</button>
+    <small>Demo mode only. No payment is taken in this project.</small>
+  </div>
+</section>
+
+<section id="account" class="page">
+  <p class="eyebrow">STUDENT ACCOUNT</p>
+  <h2>Your Dashboard</h2>
+  <div class="stats">
+    <div><b id="statName">Student</b><small>Name</small></div>
+    <div><b id="statAttempts">0</b><small>Quiz attempts</small></div>
+    <div><b id="statPlan">Free</b><small>Plan</small></div>
+  </div>
+  <div class="panel">
+    <h3>Profile</h3>
+    <input id="name" placeholder="Your name">
+    <input id="email" placeholder="Email address">
+    <button class="primary" onclick="saveProfile()">Save Profile</button>
+    <p id="syncStatus"></p>
+  </div>
+</section>
+</main>
+
+<footer>© 2026 Alpha Learn • Website v16</footer>
+<script src="app.js"></script>
+</body>
+</html>
